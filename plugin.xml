@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-CLSJToastTest" version="0.0.1">
+    <name>CLSJToastTest</name>
+
+    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <license></license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/CLSJ-Radsoft/CordovaToastTest.git</repo>
+    <issue>https://github.com/CLSJ-Radsoft/CordovaToastTest/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/ToastTest.js" name="ToastTest">
+        <clobbers target="window.plugins.ToastTest" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ToastTest">
+                <param name="android-package" value="com.clsj.cordova.plugin.ToastTest"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ToastPluginTest.java" target-dir="src/com/CLSJ-Radsoft/cordova/plugin" />
+    </platform>
+</plugin>
